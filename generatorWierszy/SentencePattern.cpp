@@ -1,11 +1,8 @@
 #include "SentencePattern.h"
 
 
-SentencePattern::SentencePattern(string filename){
-	this->filename = filename;
-	SentencePattern::read_patterns();
-}
 SentencePattern::SentencePattern(){
+	SentencePattern::read_patterns();
 }
 SentencePattern:: ~SentencePattern(){
 	save_patterns();

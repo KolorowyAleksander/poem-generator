@@ -9,9 +9,9 @@ class Sonet : public  Poem {
 public:
 	Sonet(SentencePattern &pattern,Dictionary &dictionary);
 	~Sonet();
-	char** choose_patterns() override; // generates random patterns
 
 private:
+	char** choose_words(char** patterns_table); // choose prperty rhyme in verse
 };
 
 #endif

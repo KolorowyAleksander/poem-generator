@@ -14,10 +14,7 @@
 int main(){
 	
 	//testy testy
-	/*
-	Dictionary dict;
-	SentencePattern pattern("patterns_file.txt");
-	*/
+	SentencePattern pattern;
 	Dictionary dict;
 	dict.add("Enlightment", Word_type::Concrete_Noun);
 	dict.add("Cowboy", Word_type::Concrete_Noun);
@@ -25,6 +22,8 @@ int main(){
 	dict.add("Lele", Word_type::Concrete_Noun);
 	dict.add("Bazinga", Word_type::Intransitive_Verb);
 	dict.add("Intensify", Word_type::Transitive_Verb);
+	Poem poem(6,1,pattern,dict);
+	//poem.make_poem();
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 	while (window.isOpen()){

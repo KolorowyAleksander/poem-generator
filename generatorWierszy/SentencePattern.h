@@ -11,14 +11,13 @@ class SentencePattern
 {
 
 public:
-	SentencePattern(string filename);
 	SentencePattern();
 	~SentencePattern();
 	char * get_pattern();
 
 private:
 	list<string> patterns_list;
-	string filename;
+	string filename = "patterns_file.txt";
 	bool read_patterns();
 	bool save_patterns();
 	bool add(string pattern);

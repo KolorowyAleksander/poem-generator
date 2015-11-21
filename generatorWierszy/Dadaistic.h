@@ -6,7 +6,7 @@
 
 class Dadaistic : public  Poem {
 public:
-	Dadaistic(Dictionary &dictionary);
+	Dadaistic(SentencePattern &pattern, Dictionary &dictionary);
 	~Dadaistic();
 	char** choose_patterns() override; // generates random patterns
 private:
