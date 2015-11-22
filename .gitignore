@@ -8,6 +8,12 @@
 *.pdb
 *.opensdf
 *.sdf
+*.suo
+*.user
+*.tmp
+*.tmp_proj
+*.meta
+
 #not needed folders
 SFML-2.3.2/
 Listy słów/
