@@ -18,6 +18,9 @@ int main(){
 	SentencePattern pattern;
 	Dictionary dict;
 	//dict.get_word(1);
+	Custom cust(5, 0, 6, pattern, dict);
+	cust.make_poem();
+	cout << cust.poem;
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 	while (window.isOpen()){

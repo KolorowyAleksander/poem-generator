@@ -86,11 +86,11 @@ char * Poem::get_text(char* verse){
 				if (((verse[i + 1] > 57 || verse[i + 1] < 48) && (verse[i + 2] = '#')) || (verse[i + 1] = '#'))  { // jezeli to ostatnie s³owo i wiersz jest rymowany
 					type_word = next_char - '0';
 					word = dictionary.get_word(type_word); //znajdz slowo ktore ma ostatni¹ sylabe taka jak rhyme_syllable;
-					//while (word->last_syllable != this->rhyme_syllable){
-					//	word = dictionary.get_word(type_word);
-					//}
-					//already_syllabes = +word->syllables;
-					//string_verse = string_verse + word->word;
+					while (word->last_syllable != this->rhyme_syllable){
+						word = dictionary.get_word(type_word);
+					}
+					already_syllabes = +word->syllables;
+					string_verse = string_verse + word->word;
 				}
 			}
 
@@ -98,13 +98,13 @@ char * Poem::get_text(char* verse){
 			{
 				type_word = next_char - '0';
 				word = dictionary.get_word(type_word);
-				//already_syllabes = +word->syllables;
-				//string_verse = string_verse + word->word;
+				already_syllabes = +word->syllables;
+				string_verse = string_verse + word->word;
 			}
 
 		}
 		else{ //rewrite to output table
-		//	string_verse = string_verse + verse[i];
+			string_verse = string_verse + verse[i];
 		}
 		i++;
 		next_char = verse[i];
