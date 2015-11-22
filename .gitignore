@@ -5,7 +5,9 @@
 *.log
 *.tlog
 *.exe
+*.pdb
 *.opensdf
+*.sdf
 #not needed folders
 SFML-2.3.2/
 generatorWierszy/Debug/generatorWierszy.tlog/
