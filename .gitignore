@@ -1,6 +1,5 @@
 #garbage files
 *.obj
-*.pdb
 *.idb
 *.ilk
 *.log
