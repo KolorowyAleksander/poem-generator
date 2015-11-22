@@ -19,21 +19,30 @@ Poem::~Poem()
 
 string* Poem::make_poem(){
 	char ** patterns_table = this->choose_patterns();
-	//char** char_poem = this->choose_words(patterns_table);
-	return NULL;
+	char** char_poem = this->choose_words(patterns_table);
+	string *poem = new string;
+	for (int i = 0; i < lines_number; i++){
+		*poem = +char_poem[i];
+		*poem = +"\n";
+	}
+	return poem;
 }
 
+void Poem::print_poem(){
+	cout << this->poem << endl;
+}
 
 char** Poem::choose_patterns(){
 	char ** patterns_table = new char*[lines_number];
+	srand(time(NULL));
 	for (int i = 0; i < lines_number; i++){
 		patterns_table[i] = pattern.get_pattern();
 	}
 	return patterns_table;
 }
 
-char* Poem::last_word_of_verse(char* verse){
-	//int i = sizeof(verse) / sizeof(char);
+char* Poem::last_syllable_of_verse(char* verse){
+
 	int i = strlen(verse) -1;
 	int start;
 	int end;
@@ -51,8 +60,16 @@ char* Poem::last_word_of_verse(char* verse){
 		last_word[j] = verse[i];
 		j++;
 	}
-
-	return last_word;
+	list<Word>::iterator iter;
+	for ( iter = word->begin(); iter != word->end(); iter++){ // find appropriate word on word* list
+		if (last_word == iter->word){
+			char* rhyme_syllable = new char[(iter->last_syllable).length()]; 
+			strcpy_s(rhyme_syllable, (iter->last_syllable).length() + 1, iter->last_syllable.c_str()); // change string to char
+			return rhyme_syllable;
+			break;
+		}
+	}
+	return NULL;
 }
 
 char * Poem::get_text(char* verse){
@@ -65,10 +82,13 @@ char * Poem::get_text(char* verse){
 	int type_word;
 	while (next_char != '#'){
 		if (next_char <= 57 && next_char>48){ // transformate to word
-			if (this->rhym_word){
-				if ((((verse[i + 1] > 57 || verse[i + 1] < 48) && (verse[i + 2] = '#')) || (verse[i + 1] = '#')) && this->rhymed) { // jezeli to ostatnie s³owo i wiersz jest rymowany
+			if (this->rhyme_syllable && this->rhymed){
+				if (((verse[i + 1] > 57 || verse[i + 1] < 48) && (verse[i + 2] = '#')) || (verse[i + 1] = '#'))  { // jezeli to ostatnie s³owo i wiersz jest rymowany
 					type_word = next_char - '0';
-					word = dictionary.get_word(type_word); //znajdz slowo rymowane z rhym_word;
+					word = dictionary.get_word(type_word); //znajdz slowo ktore ma ostatni¹ sylabe taka jak rhyme_syllable;
+					//while (word->last_syllable != this->rhyme_syllable){
+					//	word = dictionary.get_word(type_word);
+					//}
 					//already_syllabes = +word->syllables;
 					//string_verse = string_verse + word->word;
 				}
@@ -90,7 +110,7 @@ char * Poem::get_text(char* verse){
 		next_char = verse[i];
 	}
 	already_syllabes = +verse[++i];
-	if (already_syllabes != this->syll_per_verse){
+	if (already_syllabes != this->syll_per_verse && this->syll_per_verse!=NULL){
 		return NULL;
 	}
 	else
@@ -102,16 +122,16 @@ char * Poem::get_text(char* verse){
 
 char** Poem::choose_words(char **patterns_table){
 	char **poem = new char*[lines_number];
-	this->rhym_word = NULL;
+	this->rhyme_syllable = NULL;
 	for (int i = 0; i < lines_number; i++){
-		if (this->rhymed && i>0){
-			this->rhym_word = last_word_of_verse(poem[i - 1]);// znajdz slowo rymowane ze slowem rhym_word
+		if (this->rhymed && i>0){ // if it's rhymed poem and it's not first line
+			this->rhyme_syllable = last_syllable_of_verse(poem[i - 1]);// find syllable that will rhyme with the next verse
 		}
 		poem[i] = get_text(patterns_table[i]);
 		while (!poem[i]){//choosing words until get right size of verse
 			poem[i] = get_text(patterns_table[i]);
 		}
-		this->rhym_word = NULL;
+		this->rhyme_syllable = NULL;
 	}
 
 	return poem;

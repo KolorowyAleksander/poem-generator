@@ -9,16 +9,21 @@ Haiku :: ~Haiku(){
 }
 
 char** Haiku::choose_patterns(){
-	int rand_word;
+	int rand_word; // contains int type of word
 	char ** patterns_table = new char*[lines_number];
 	for (int i = 0; i < lines_number; i++){
-		int size = (rand() % 4) + 2;
-		char * verse = new char[size];
+		int size = (rand() % 4) + 2; // random number of words in verse
+		char * verse = new char[size + size - 1]; //size = number of words, size-1  = number of spaces between words
 		for (int n = 0; n < size; n++){
-			rand_word = (rand() % 6) + 1;
-			char ch_rand_word[2];
-			sprintf_s(ch_rand_word, 2, "%d", rand_word); // change int to char;
-			verse[n] = *ch_rand_word;
+			if (n % 2 == 0){ // if it's word turn
+				rand_word = (rand() % 6) + 1; // generates random type of word
+				char ch_rand_word[2];
+				sprintf_s(ch_rand_word, 2, "%d", rand_word); // change int to char;
+				verse[n] = *ch_rand_word;
+			}
+			else{//if it's space turn
+				verse[n] = 32;
+			}
 		}
 		patterns_table[i] = verse;
 	}

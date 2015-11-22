@@ -3,6 +3,7 @@
 #include "Dictionary.h"
 #include "SentencePattern.h"
 #include "Poem.h"
+#include "Custom.h"
 #include "Sonet.h"
 #include "Haiku.h"
 #include "Word.h"
@@ -22,9 +23,7 @@ int main(){
 	dict.add("Lele", Word_type::Concrete_Noun);
 	dict.add("Bazinga", Word_type::Intransitive_Verb);
 	dict.add("Intensify", Word_type::Transitive_Verb);
-	Poem poem(6,1,pattern,dict);
-	//poem.make_poem();
-
+	
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 	while (window.isOpen()){
 		sf::Event event;

@@ -32,7 +32,6 @@ bool SentencePattern::save_patterns(){
 }
 bool SentencePattern::add(string pattern){
 	patterns_list.push_back(pattern);
-	cout << pattern << endl;
 	return 0;
 }
 bool SentencePattern::change(string new_pattern, string old_pattern){
@@ -46,7 +45,6 @@ bool SentencePattern::remove(string pattern){
 }
 
 char* SentencePattern::get_pattern(){
-	srand(time(NULL));
 	int size = patterns_list.size();
 	list<string>::iterator iter;
 

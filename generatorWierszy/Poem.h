@@ -14,21 +14,20 @@ public:
 	Poem();
 	~Poem();
 	string *make_poem();
-
+	string *poem; // final text of poem
+	void print_poem();
 protected:
 	int lines_number; // number of verse
 	int syll_per_verse; // number of syllables for each verse
 	bool rhymed; // TRUE if poem is rhymed, FALSE else
-	virtual char ** choose_patterns(); // for each line choose patterns from pattern_list 
 	list<Word> *word; // list of words from which arises a poem
-	string *poem; // final text of poem
-	char * get_text(char* verse); // change pattern to property words creating one single verse
-	char** choose_words(char **patterns_table);  // with function get_text finding a words with property number of syllabes
 	Dictionary dictionary;
 	SentencePattern pattern;
-	char * last_word_of_verse(char* verse); // finding last word of verse
-	char* rhym_word; // last word to find rhyme, NULL if unnecessary
-
+	char* rhyme_syllable; // last syllable of verse to find rhyme, NULL if unnecessary
+	virtual char ** choose_patterns(); // for each line choose patterns from pattern_list 
+	char * get_text(char* verse); // change pattern to property words creating one single verse
+	virtual char** choose_words(char **patterns_table);  // with function get_text finding a words with property number of syllabes
+	char * last_syllable_of_verse(char* verse); // finding last word of verse
 
 private:
 

@@ -9,9 +9,11 @@ class Sonet : public  Poem {
 public:
 	Sonet(SentencePattern &pattern,Dictionary &dictionary);
 	~Sonet();
+protected:
+	char** choose_words(char** patterns_table); // choose prperty rhyme in verse
 
 private:
-	char** choose_words(char** patterns_table); // choose prperty rhyme in verse
+	
 };
 
 #endif
