@@ -4,6 +4,9 @@
 *.idb
 *.ilk
 *.log
+*.tlog
+*.exe
+#not needed folders
 SFML-2.3.2/
 generatorWierszy/Debug/generatorWierszy.tlog/
 
