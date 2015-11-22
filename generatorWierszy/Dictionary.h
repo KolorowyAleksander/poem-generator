@@ -10,6 +10,8 @@ public:
 	void add(std::string, int type); //Add a word of exact type to the list
 	void remove(std::string); //Remove a word from the list
 	Word* get_word(int type); //Find random word of exact type
+	Word* get_word(int type, int syllables); //Find random word of exact type and exact syllabes number
+	Word* get_word(int type, int syllables, std::string last_syllable); //Find random word of exact type and exact syllabes number and exact last syllable
 	void print_list();
 	friend std::ostream& operator<<(std::ostream &os, const Word &a); //overloaded ostream operator for proper serialization
 private:

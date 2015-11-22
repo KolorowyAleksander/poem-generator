@@ -67,6 +67,40 @@ Word *Dictionary::get_word(int type){
 		return nullptr;
 }
 
+Word* Dictionary::get_word(int type, int syllables){
+	Word *a = nullptr;
+	srand(time(nullptr));
+	int t = 0, s;
+	for (auto i = words->begin(); i != words->end(); ++i){
+		s = rand() % 10000;
+		if (i->type == type && s > t && i->syllables == syllables){
+			t = s;
+			a = &*i;
+		}
+	}
+	if (a)
+		return a;
+	else
+		return nullptr;
+}
+
+Word* Dictionary::get_word(int type, int syllables, std::string last_syllable){
+	Word *a = nullptr;
+	srand(time(nullptr));
+	int t = 0, s;
+	for (auto i = words->begin(); i != words->end(); ++i){
+		s = rand() % 10000;
+		if (i->type == type && s > t && i->syllables == syllables && i->last_syllable == last_syllable){
+			t = s;
+			a = &*i;
+		}
+	}
+	if (a)
+		return a;
+	else
+		return nullptr;
+}
+
 std::ostream& operator<<(std::ostream& os, const Word& a){
 	os << a.word << " " << Word_type::intToString(a.type) << "\n";
 	return os;
