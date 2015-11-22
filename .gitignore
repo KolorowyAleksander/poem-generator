@@ -10,6 +10,7 @@
 *.sdf
 #not needed folders
 SFML-2.3.2/
+Listy słów/
 generatorWierszy/Debug/generatorWierszy.tlog/
 
 # Windows image file caches

@@ -14,7 +14,6 @@ Dictionary::Dictionary(){
 	std::string a;
 	while (getline(file, a)){
 		size_t found = a.find_first_of(" ");
-		std::cout << "czytam: "<< a.substr(0, found) << " " << Word_type::strToInt(a.substr(found + 1)) <<"\n";
 		if (Word_type::strToInt(a.substr(found + 1)) != 0)
 			this->add(a.substr(0, found), Word_type::strToInt(a.substr(found + 1)));
 		else
