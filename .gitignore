@@ -3,7 +3,9 @@
 *.pdb
 *.idb
 *.ilk
+*.log
 SFML-2.3.2/
+generatorWierszy/Debug/generatorWierszy.tlog/
 
 # Windows image file caches
 Thumbs.db
