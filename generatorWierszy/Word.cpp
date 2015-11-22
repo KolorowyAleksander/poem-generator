@@ -3,16 +3,10 @@
 
 Hyphenate::Hyphenator Word::hyph(RFC_3066::Language("en"));
 
-void Word::test() const{
-	std::cout << this->word << "\n";
-	std::cout << this->last_syllable << "\n";
-	std::cout << this->syllables << "\n";
-	std::cout << this->type << "\n";
-}
-
 Word::Word(std::string word){
 	this->word = word;
 };
+
 Word::Word(std::string word, int type){
 	this->word = word;
 	this->type = type;
