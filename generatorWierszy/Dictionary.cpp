@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include "word_type.h"
+#include <ctime>
 
 Dictionary::Dictionary(){
 	this->words = new std::list<Word>; //make a list for words from file
@@ -13,7 +14,7 @@ Dictionary::Dictionary(){
 	std::string a;
 	while (getline(file, a)){
 		size_t found = a.find_first_of(" ");
-		std::cout << "czytam: "<< a.substr(0, found) << " " << a.substr(found + 1) <<"\n";
+		std::cout << "czytam: "<< a.substr(0, found) << " " << Word_type::strToInt(a.substr(found + 1)) <<"\n";
 		if (Word_type::strToInt(a.substr(found + 1)) != 0)
 			this->add(a.substr(0, found), Word_type::strToInt(a.substr(found + 1)));
 		else
@@ -51,7 +52,21 @@ void Dictionary::print_list(){
 }
 
 Word *Dictionary::get_word(int type){
-	return nullptr;
+	Word *a = nullptr;
+	srand(time(nullptr));
+	int t = 0, s;
+	for (auto i : *words){
+		s = rand() % 10000;
+		if (i.type == type && s > t){
+			t = s;
+			a = &i;
+			std::cout << *a << " t="<<t <<" s=" << s <<"\n";
+		}
+	}
+	if (a)
+		return a;
+	else
+		return nullptr;
 }
 
 std::ostream& operator<<(std::ostream& os, const Word& a){

@@ -6,7 +6,7 @@ namespace Word_type{
 		Abstract_Noun = 2,
 		Transitive_Verb = 3,
 		Intransitive_Verb = 4,
-		Adjectives = 5,
+		Adjective = 5,
 		Adverb = 6
 	}; // enum for word types for simplicity and laziness
 
@@ -16,7 +16,7 @@ namespace Word_type{
 		case 2:		return "Abstract Noun";
 		case 3:		return "Transitive Verb";
 		case 4:		return "Intransitive Verb";
-		case 5:		return "Adjectives";
+		case 5:		return "Adjective";
 		case 6:		return "Adverb";
 		default:	return "Oh noes! Something went horriberly wrong!";
 		} // converting to string for proper file management
@@ -35,7 +35,7 @@ namespace Word_type{
 		if (a == "Intransitive Verb"){
 			return 4;
 		}
-		if (a == "Adjectives"){
+		if (a == "Adjective"){
 			return 5;
 		}
 		if (a == "Adverb"){
