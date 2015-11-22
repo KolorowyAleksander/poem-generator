@@ -1,6 +1,7 @@
 #garbage files
 *.obj
 *.pdb
+*.idb
 SFML-2.3.2/
 
 # Windows image file caches
