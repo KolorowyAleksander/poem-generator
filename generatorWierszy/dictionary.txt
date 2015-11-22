@@ -1,6 +1,12 @@
-Enlightment 1
-Cowboy 1
-Frogification 6
-Lele 1
-Bazinga 4
-Intensify 3
+Enlightment Concrete Noun
+Cowboy Concrete Noun
+Frogification Adverb
+Lele Concrete Noun
+Bazinga Intransitive Verb
+Intensify Transitive Verb
+Enlightment Concrete Noun
+Cowboy Concrete Noun
+Frogification Adverb
+Lele Concrete Noun
+Bazinga Intransitive Verb
+Intensify Transitive Verb

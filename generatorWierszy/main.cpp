@@ -17,6 +17,7 @@ int main(){
 	//testy testy
 	SentencePattern pattern;
 	Dictionary dict;
+	
 	dict.add("Enlightment", Word_type::Concrete_Noun);
 	dict.add("Cowboy", Word_type::Concrete_Noun);
 	dict.add("Frogification", Word_type::Adverb);
@@ -24,6 +25,7 @@ int main(){
 	dict.add("Bazinga", Word_type::Intransitive_Verb);
 	dict.add("Intensify", Word_type::Transitive_Verb);
 	
+
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 	while (window.isOpen()){
 		sf::Event event;

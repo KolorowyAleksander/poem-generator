@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include "word_type.h"
 
 Dictionary::Dictionary(){
 	this->words = new std::list<Word>; //make a list for words from file
@@ -9,7 +10,15 @@ Dictionary::Dictionary(){
 	std::fstream file(this->filename);
 	file.open(this->filename, std::ios::in);
 	file.clear();
-	
+	std::string a;
+	while (getline(file, a)){
+		size_t found = a.find_first_of(" ");
+		std::cout << "czytam: "<< a.substr(0, found) << " " << a.substr(found + 1) <<"\n";
+		if (Word_type::strToInt(a.substr(found + 1)) != 0)
+			this->add(a.substr(0, found), Word_type::strToInt(a.substr(found + 1)));
+		else
+			std::cout << "some kinda error happened\n";
+	}
 	file.close();
 	//stuff
 }
@@ -46,6 +55,6 @@ Word *Dictionary::get_word(int type){
 }
 
 std::ostream& operator<<(std::ostream& os, const Word& a){
-	os << a.word << " " << a.type << "\n";
+	os << a.word << " " << Word_type::intToString(a.type) << "\n";
 	return os;
 }

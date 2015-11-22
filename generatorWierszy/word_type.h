@@ -9,29 +9,38 @@ namespace Word_type{
 		Adjectives = 5,
 		Adverb = 6
 	}; // enum for word types for simplicity and laziness
-	/*
-	inline int StrToEnum(const char *a){
+
+	inline const char* intToString(int a){
 		switch (a){
-		case "Concrete Noun":		return Concrete_Noun;
-		case "Abstract Noun":		return Abstract_Noun;
-		case "Transitive Verb":		return Transitive_Verb;
-		case "Intransitive Verb":	return Intransitive_Verb;
-		case "Adjectives":			return Adjectives;
-		case "Adverb":				return Adverb;
-		default:					return;
-		}
-	} //converting back to int
-	
-	inline const char* ToString(word_type a){
-		switch (a){
-		case Concrete_Noun:		return "Concrete Noun";
-		case Abstract_Noun:		return "Abstract Noun";
-		case Transitive_Verb:	return "Transitive Verb";
-		case Intransitive_Verb: return "Intransitive Verb";
-		case Adjectives:		return "Adjectives";
-		case Adverb:			return "Adverb";
-		default:				return "Oh noes! Something went horriberly wrong!";
+		case 1:		return "Concrete Noun";
+		case 2:		return "Abstract Noun";
+		case 3:		return "Transitive Verb";
+		case 4:		return "Intransitive Verb";
+		case 5:		return "Adjectives";
+		case 6:		return "Adverb";
+		default:	return "Oh noes! Something went horriberly wrong!";
 		} // converting to string for proper file management
 	}
-	*/
+
+	inline int strToInt(std::string a){
+		if (a == "Concrete Noun"){
+			return 1;
+		}
+		if (a == "Abstract Noun"){
+			return 2;
+		}
+		if (a == "Transitive Verb"){
+			return 3;
+		}
+		if (a == "Intransitive Verb"){
+			return 4;
+		}
+		if (a == "Adjectives"){
+			return 5;
+		}
+		if (a == "Adverb"){
+			return 6;
+		}
+		return 0;
+	}
 }
