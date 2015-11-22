@@ -157,4 +157,463 @@ dolphin Concrete Noun
 grouper Concrete Noun
 kingfish Concrete Noun
 seal Concrete Noun
-
+beauty Abstract Noun
+bravery Abstract Noun
+brilliance Abstract Noun
+brutality Abstract Noun
+calm Abstract Noun
+charity Abstract Noun
+coldness Abstract Noun
+compassion Abstract Noun
+confidence Abstract Noun
+contentment Abstract Noun
+courage Abstract Noun
+curiosity Abstract Noun
+dedication Abstract Noun
+determination Abstract Noun
+ego Abstract Noun
+elegance Abstract Noun
+enthusiasm Abstract Noun
+envy Abstract Noun
+evil Abstract Noun
+fear Abstract Noun
+generosity Abstract Noun
+goodness Abstract Noun
+graciousness Abstract Noun
+hatred Abstract Noun
+honesty Abstract Noun
+honor Abstract Noun
+hope Abstract Noun
+humility Abstract Noun
+humor Abstract Noun
+insanity Abstract Noun
+integrity Abstract Noun
+intelligence Abstract Noun
+jealousy Abstract Noun
+kindness Abstract Noun
+loyalty Abstract Noun
+maturity Abstract Noun
+patience Abstract Noun
+perseverance Abstract Noun
+sanity Abstract Noun
+self-control Abstract Noun
+sensitivity Abstract Noun
+sophistication Abstract Noun
+stupidity Abstract Noun
+sympathy Abstract Noun
+talent Abstract Noun
+tolerance Abstract Noun
+trust Abstract Noun
+warmth Abstract Noun
+weakness Abstract Noun
+wisdom Abstract Noun
+wit Abstract Noun
+ability Abstract Noun
+adventure Abstract Noun
+artistry Abstract Noun
+awe Abstract Noun
+belief Abstract Noun
+chaos Abstract Noun
+comfort Abstract Noun
+communication Abstract Noun
+consideration Abstract Noun
+crime Abstract Noun
+culture Abstract Noun
+idiosyncrasy Abstract Noun
+imagination Abstract Noun
+impression Abstract Noun
+improvement Abstract Noun
+inflation Abstract Noun
+information Abstract Noun
+justice Abstract Noun
+knowledge Abstract Noun
+laughter Abstract Noun
+law Abstract Noun
+liberty Abstract Noun
+life Abstract Noun
+loss Abstract Noun
+luck Abstract Noun
+luxury Abstract Noun
+memory Abstract Noun
+mercy Abstract Noun
+motivation Abstract Noun
+movement Abstract Noun
+need Abstract Noun
+omen Abstract Noun
+opinion Abstract Noun
+opportunism Abstract Noun
+opportunity Abstract Noun
+parenthood Abstract Noun
+patriotism Abstract Noun
+peace Abstract Noun
+peculiarity Abstract Noun
+poverty Abstract Noun
+principle Abstract Noun
+reality Abstract Noun
+redemption Abstract Noun
+refreshment Abstract Noun
+riches Abstract Noun
+rumor Abstract Noun
+service Abstract Noun
+shock Abstract Noun
+skill Abstract Noun
+slavery Abstract Noun
+sleep Abstract Noun
+sparkle Abstract Noun
+speculation Abstract Noun
+adoration Abstract Noun
+amazement Abstract Noun
+anger Abstract Noun
+anxiety Abstract Noun
+apprehension Abstract Noun
+clarity Abstract Noun
+delight Abstract Noun
+despair Abstract Noun
+disappointment Abstract Noun
+disbelief Abstract Noun
+excitement Abstract Noun
+fascination Abstract Noun
+friendship Abstract Noun
+grief Abstract Noun
+happiness Abstract Noun
+hate Abstract Noun
+helpfulness Abstract Noun
+helplessness Abstract Noun
+infatuation Abstract Noun
+joy Abstract Noun
+love Abstract Noun
+misery Abstract Noun
+pain Abstract Noun
+pleasure Abstract Noun
+power Abstract Noun
+pride Abstract Noun
+relaxation Abstract Noun
+relief Abstract Noun
+romance Abstract Noun
+sadness Abstract Noun
+satisfaction Abstract Noun
+silliness Abstract Noun
+sorrow Abstract Noun
+strength Abstract Noun
+surprise Abstract Noun
+tiredness Abstract Noun
+uncertainty Abstract Noun
+wariness Abstract Noun
+weariness Abstract Noun
+worry Abstract Noun
+magic Transitive Verb
+magnetize Transitive Verb
+magnify Transitive Verb
+mail Transitive Verb
+mailshot Transitive Verb
+mainprise Transitive Verb
+mainstream Transitive Verb
+mainswear Transitive Verb
+maintain Transitive Verb
+majorize Transitive Verb
+make Transitive Verb
+maraud Transitive Verb
+marble Transitive Verb
+marbleize Transitive Verb
+marcel Transitive Verb
+march Transitive Verb
+marcot Transitive Verb
+Margaryize Transitive Verb
+marginalize Transitive Verb
+marionette Transitive Verb
+mercurialize Transitive Verb
+mercurify Transitive Verb
+mere Transitive Verb
+merge Transitive Verb
+mergesort Transitive Verb
+merit Transitive Verb
+milt Transitive Verb
+mimmer Transitive Verb
+min Transitive Verb
+mince Transitive Verb
+mindwipe Transitive Verb
+mine Transitive Verb
+ming Transitive Verb
+miniature Transitive Verb
+minimize Transitive Verb
+minister Transitive Verb
+minoritize Transitive Verb
+minorize Transitive Verb
+objurgate Transitive Verb
+obligate Transitive Verb
+oblige Transitive Verb
+oblique Transitive Verb
+obliviate Transitive Verb
+oblivion Transitive Verb
+obscure Transitive Verb
+obsecrate Transitive Verb
+observe Transitive Verb
+obsess Transitive Verb
+obsolete Transitive Verb
+operate Transitive Verb
+operationalize Transitive Verb
+opiate Transitive Verb
+opinion Transitive Verb
+opinionate Transitive Verb
+oppress Transitive Verb
+calcify Transitive Verb
+calcine Transitive Verb
+calcitrate Transitive Verb
+calculate Transitive Verb
+calefy Transitive Verb
+calibrate Transitive Verb
+chicane Transitive Verb
+chickenize Transitive Verb
+chide Transitive Verb
+Chileanize Transitive Verb
+chill Transitive Verb
+chime Transitive Verb
+chin Transitive Verb
+jiggle Transitive Verb
+jigsaw Transitive Verb
+jilt Transitive Verb
+jingoize Transitive Verb
+jink Transitive Verb
+jinx Transitive Verb
+jit Transitive Verb
+jive Transitive Verb
+jizz Transitive Verb
+job Transitive Verb
+joggle Transitive Verb
+agree Intransitive Verb
+appear Intransitive Verb
+arrive Intransitive Verb
+become Intransitive Verb
+belong Intransitive Verb
+collapse Intransitive Verb
+cost Intransitive Verb
+depend Intransitive Verb
+die Intransitive Verb
+disappear Intransitive Verb
+emerge Intransitive Verb
+exist Intransitive Verb
+fall Intransitive Verb
+go Intransitive Verb
+happen Intransitive Verb
+have Intransitive Verb
+inquire Intransitive Verb
+knock Intransitive Verb
+sound Intransitive Verb
+laugh Intransitive Verb
+lie Intransitive Verb
+recline Intransitive Verb
+live Intransitive Verb
+look Intransitive Verb
+last Intransitive Verb
+endure Intransitive Verb
+occur Intransitive Verb
+remain Intransitive Verb
+respond Intransitive Verb
+rise Intransitive Verb
+sit Intransitive Verb
+sleep Intransitive Verb
+stand Intransitive Verb
+stay Intransitive Verb
+swim Intransitive Verb
+vanish Intransitive Verb
+wake Intransitive Verb
+wait Intransitive Verb
+boring Adjective
+natural Adjective
+dangerous Adjective
+sloppy Adjective
+hospitable Adjective
+blushing Adjective
+exciting Adjective
+drab Adjective
+long Adjective
+piquant Adjective
+encouraging Adjective
+protective Adjective
+ossified Adjective
+well-groomed Adjective
+literate Adjective
+greedy Adjective
+utopian Adjective
+smiling Adjective
+reflective Adjective
+terrific Adjective
+high-pitched Adjective
+entertaining Adjective
+shaggy Adjective
+fallacious Adjective
+clumsy Adjective
+safe Adjective
+tenuous Adjective
+well-to-do Adjective
+modern Adjective
+marvelous Adjective
+soggy Adjective
+bashful Adjective
+jagged Adjective
+wiggly Adjective
+best Adjective
+wet Adjective
+addicted Adjective
+jumpy Adjective
+alluring Adjective
+lying Adjective
+damp Adjective
+wooden Adjective
+lame Adjective
+five Adjective
+quiet Adjective
+female Adjective
+unkempt Adjective
+unique Adjective
+fabulous Adjective
+cumbersome Adjective
+heavenly Adjective
+windy Adjective
+lumpy Adjective
+acidic Adjective
+smooth Adjective
+whole Adjective
+heavy Adjective
+gray Adjective
+colossal Adjective
+easy Adjective
+stiff Adjective
+habitual Adjective
+spotless Adjective
+wicked Adjective
+bitter Adjective
+silent Adjective
+used Adjective
+delirious Adjective
+psychotic Adjective
+careful Adjective
+simplistic Adjective
+chilly Adjective
+shrill Adjective
+nebulous Adjective
+innocent Adjective
+discreet Adjective
+even Adjective
+inquisitive Adjective
+mundane Adjective
+pricey Adjective
+swift Adjective
+tasty Adjective
+brown Adjective
+depressed Adjective
+adamant Adjective
+vagabond Adjective
+comfortable Adjective
+unusual Adjective
+wretched Adjective
+plant Adjective
+stormy Adjective
+fluffy Adjective
+faded Adjective
+shaky Adjective
+sweltering Adjective
+woebegone Adjective
+wide Adjective
+moaning Adjective
+curved Adjective
+needy Adjective
+sympathetically Adverb
+seemingly Adverb
+inquisitively Adverb
+knowingly Adverb
+meaningfully Adverb
+dutifully Adverb
+devotedly Adverb
+sweetly Adverb
+rarely Adverb
+closely Adverb
+thoroughly Adverb
+neatly Adverb
+bleakly Adverb
+else Adverb
+ever Adverb
+urgently Adverb
+less Adverb
+surprisingly Adverb
+absentmindedly Adverb
+only Adverb
+hungrily Adverb
+early Adverb
+reluctantly Adverb
+interestingly Adverb
+altogether Adverb
+dearly Adverb
+daintily Adverb
+wildly Adverb
+worriedly Adverb
+yawningly Adverb
+even Adverb
+brightly Adverb
+wholly Adverb
+anyway Adverb
+nicely Adverb
+poorly Adverb
+acidly Adverb
+thankfully Adverb
+bashfully Adverb
+intently Adverb
+generally Adverb
+roughly Adverb
+hastily Adverb
+queasily Adverb
+honestly Adverb
+fully Adverb
+jaggedly Adverb
+upward Adverb
+mockingly Adverb
+gently Adverb
+badly Adverb
+longingly Adverb
+carelessly Adverb
+majestically Adverb
+basically Adverb
+significantly Adverb
+yesterday Adverb
+arrogantly Adverb
+probably Adverb
+freely Adverb
+promptly Adverb
+kissingly Adverb
+selfishly Adverb
+yieldingly Adverb
+definitely Adverb
+effectively Adverb
+bitterly Adverb
+yearly Adverb
+scarcely Adverb
+coyly Adverb
+calmly Adverb
+instead Adverb
+defiantly Adverb
+correctly Adverb
+technically Adverb
+naturally Adverb
+repeatedly Adverb
+recklessly Adverb
+greedily Adverb
+currently Adverb
+owlishly Adverb
+diligently Adverb
+almost Adverb
+therefore Adverb
+perfectly Adverb
+previously Adverb
+merrily Adverb
+exactly Adverb
+hopefully Adverb
+quickly Adverb
+fortunately Adverb
+unnecessarily Adverb
+carefully Adverb
+mainly Adverb
+warmly Adverb
+keenly Adverb
+truthfully Adverb
+irritably Adverb
+dreamily Adverb
