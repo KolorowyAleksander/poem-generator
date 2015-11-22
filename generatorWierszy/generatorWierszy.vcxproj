@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Izabela\Documents\GitHub\generatorWierszyPO\SFML-2.3.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Izabela\Documents\GitHub\generatorWierszyPO\SFML-2.3.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Izabela\Desktop\generatorWierszyPO\SFML-2.3.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Izabela\Desktop\generatorWierszyPO\SFML-2.3.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Izabela\Documents\GitHub\generatorWierszyPO\SFML-2.3.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Izabela\Documents\GitHub\generatorWierszyPO\SFML-2.3.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Izabela\Desktop\generatorWierszyPO\SFML-2.3.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Izabela\Desktop\generatorWierszyPO\SFML-2.3.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

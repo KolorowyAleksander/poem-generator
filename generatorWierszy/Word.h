@@ -14,5 +14,6 @@ public:
 	bool operator==(const Word &a) const;
 private:
 	static Hyphenator hyph;
+	void test()const;
 };
 

@@ -81,35 +81,49 @@ char * Poem::get_text(char* verse){
 	char *char_verse;
 	int type_word;
 	while (next_char != '#'){
+		if (already_syllabes > this->syll_per_verse){
+			return NULL;
+		}
 		if (next_char <= 57 && next_char>48){ // transformate to word
 			if (this->rhyme_syllable && this->rhymed){
 				if (((verse[i + 1] > 57 || verse[i + 1] < 48) && (verse[i + 2] = '#')) || (verse[i + 1] = '#'))  { // jezeli to ostatnie s³owo i wiersz jest rymowany
 					type_word = next_char - '0';
-					word = dictionary.get_word(type_word); //znajdz slowo ktore ma ostatni¹ sylabe taka jak rhyme_syllable;
+					already_syllabes = +verse[i + 3] - '0';
+					word = dictionary.get_word(type_word,this->syll_per_verse - already_syllabes, this->rhyme_syllable); //znajdz slowo ktore ma ostatni¹ sylabe taka jak rhyme_syllable;
 					//while (word->last_syllable != this->rhyme_syllable){
-					//	word = dictionary.get_word(type_word);
+						//word = dictionary.get_word(type_word);
 					//}
-					//already_syllabes = +word->syllables;
-					//string_verse = string_verse + word->word;
+					already_syllabes = already_syllabes + word->syllables;
+					string_verse = string_verse + word->word;
 				}
 			}
 
 			else
 			{
 				type_word = next_char - '0';
-				word = dictionary.get_word(type_word);
-				//already_syllabes = +word->syllables;
-				//string_verse = string_verse + word->word;
+				type_word = 1;
+				if (verse[i + 2] == '#'){
+					already_syllabes = already_syllabes +verse[i + 3] - '0';
+					word = dictionary.get_word(type_word, syll_per_verse - already_syllabes);
+				}
+				else 
+					word = dictionary.get_word(type_word);
+				
+				if (word == NULL){
+					word = dictionary.get_word(type_word);
+				}
+				already_syllabes = already_syllabes +word->syllables;
+				string_verse = string_verse + word->word;
 			}
 
 		}
 		else{ //rewrite to output table
-		//	string_verse = string_verse + verse[i];
+			string_verse = string_verse + verse[i];
 		}
 		i++;
 		next_char = verse[i];
 	}
-	already_syllabes = +verse[++i];
+	//already_syllabes = +verse[++i] - '0';
 	if (already_syllabes != this->syll_per_verse && this->syll_per_verse!=NULL){
 		return NULL;
 	}
