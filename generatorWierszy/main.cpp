@@ -17,7 +17,6 @@ int main(){
 	//testy testy
 	SentencePattern pattern;
 	Dictionary dict;
-	//dict.get_word(1);
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 	while (window.isOpen()){

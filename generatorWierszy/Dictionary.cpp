@@ -55,12 +55,11 @@ Word *Dictionary::get_word(int type){
 	Word *a = nullptr;
 	srand(time(nullptr));
 	int t = 0, s;
-	for (auto i : *words){
+	for (auto i = words->begin(); i != words->end(); ++i){
 		s = rand() % 10000;
-		if (i.type == type && s > t){
+		if (i->type == type && s > t){
 			t = s;
-			a = &i;
-			std::cout << *a << " t="<<t <<" s=" << s <<"\n";
+			a = &*i;
 		}
 	}
 	if (a)
