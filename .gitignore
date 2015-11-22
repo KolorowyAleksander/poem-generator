@@ -2,6 +2,7 @@
 *.obj
 *.pdb
 *.idb
+*.ilk
 SFML-2.3.2/
 
 # Windows image file caches
