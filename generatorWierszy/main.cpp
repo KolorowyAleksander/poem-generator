@@ -13,10 +13,12 @@
 
 
 int main(){
+
 	//initialization of needed things
 	SentencePattern pattern; //patterns
 	Dictionary dict; //dictionary
 	sf::RenderWindow window(sf::VideoMode(500, 550), "Generator",sf::Style::None); //create a sfml renderwindow
+
 
 	sf::String Text;
 	sf::String Title;

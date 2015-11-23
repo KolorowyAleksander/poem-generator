@@ -15,8 +15,8 @@ Word::Word(std::string word, int type){
 	for (auto i : tmp)
 		if (i == '-') this->syllables++;
 	this->syllables++;
-	size_t found = tmp.find_last_of('-');
-	this->last_syllable = tmp.substr(found + 1);
+	if(size_t found = tmp.find_last_of('-'))
+		this->last_syllable = tmp.substr(found + 1);
 }
 
 bool Word::operator==(const Word &a) const{
