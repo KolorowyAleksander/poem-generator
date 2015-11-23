@@ -12,14 +12,17 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 
+
+
+
 int main(){
 	
 	//testy testy
 	SentencePattern pattern;
 	Dictionary dict;
-	Custom cust(1, 0, 7, pattern, dict);
-	cust.make_poem();
-	cout << cust.poem;
+	Custom cust(2, 0, 8, pattern, dict);
+		cust.make_poem();
+	//cout << cust.poem;
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 
 	sf::String Text;

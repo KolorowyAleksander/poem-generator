@@ -30,25 +30,25 @@ char** Haiku::choose_patterns(){
 	return patterns_table;
 }
 
-char** Haiku::choose_words(char **patterns_table){
-	int i = 0;
-	char **poem = new char*[lines_number];
-	//choosing words until get right size of verse
-	this->syll_per_verse = 5;
-	poem[0] = get_text(patterns_table[0]);
-	while (!poem[0]){
-		poem[0] = get_text(patterns_table[0]);
-	}
-	this->syll_per_verse = 7;
-	poem[1] = get_text(patterns_table[1]);
-	while (!poem[1]){
-		poem[1] = get_text(patterns_table[1]);
-	}
-	this->syll_per_verse = 5;
-	poem[2] = get_text(patterns_table[2]);
-	while (!poem[2]){
-		poem[2] = get_text(patterns_table[2]);
-	}
-
-	return patterns_table;
-}
+//char** Haiku::choose_words(char **patterns_table){
+//	int i = 0;
+//	char **poem = new char*[lines_number];
+//	//choosing words until get right size of verse
+//	this->syll_per_verse = 5;
+//	poem[0] = get_text(patterns_table[0]);
+//	while (!poem[0]){
+//		poem[0] = get_text(patterns_table[0]);
+//	}
+//	this->syll_per_verse = 7;
+//	poem[1] = get_text(patterns_table[1]);
+//	while (!poem[1]){
+//		poem[1] = get_text(patterns_table[1]);
+//	}
+//	this->syll_per_verse = 5;
+//	poem[2] = get_text(patterns_table[2]);
+//	while (!poem[2]){
+//		poem[2] = get_text(patterns_table[2]);
+//	}
+//
+//	return patterns_table;
+//}
