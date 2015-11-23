@@ -52,7 +52,7 @@ void Dictionary::print_list(){
 
 Word *Dictionary::get_word(int type){
 	Word *a = nullptr;
-	srand(time(nullptr));
+	//srand(time(nullptr));
 	int t = 0, s;
 	for (auto i = words->begin(); i != words->end(); ++i){
 		s = rand() % 10000;
@@ -69,7 +69,7 @@ Word *Dictionary::get_word(int type){
 
 Word* Dictionary::get_word(int type, int syllables){
 	Word *a = nullptr;
-	srand(time(nullptr));
+	//srand(time(nullptr));
 	int t = 0, s;
 	for (auto i = words->begin(); i != words->end(); ++i){
 		s = rand() % 10000;
@@ -86,7 +86,7 @@ Word* Dictionary::get_word(int type, int syllables){
 
 Word* Dictionary::get_word(int type, int syllables, std::string last_syllable){
 	Word *a = nullptr;
-	srand(time(nullptr));
+	//srand(time(nullptr));
 	int t = 0, s;
 	for (auto i = words->begin(); i != words->end(); ++i){
 		s = rand() % 10000;

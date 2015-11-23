@@ -12,7 +12,7 @@ public:
    
 protected:
 	char** choose_patterns(); // generates random patterns without any grammar
-	//char** choose_words(char** patterns_table); // choose property verse : 5,7,5 syllables per line
+	string choose_words(char** patterns_table); // choose property verse : 5,7,5 syllables per line
 
 private:
 	

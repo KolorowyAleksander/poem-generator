@@ -5,6 +5,14 @@ Hyphenate::Hyphenator Word::hyph(RFC_3066::Language("en"));
 
 Word::Word(std::string word){
 	this->word = word;
+	this->syllables = 0;
+	std::string tmp = hyph.hyphenate(word);
+	this->syllables = 0;
+	for (auto i : tmp)
+		if (i == '-') this->syllables++;
+	this->syllables++;
+	size_t found = tmp.find_last_of('-');
+	this->last_syllable = tmp.substr(found + 1);
 };
 
 Word::Word(std::string word, int type){

@@ -18,10 +18,13 @@
 int main(){
 	
 	//testy testy
+	srand(time(nullptr));
 	SentencePattern pattern;
 	Dictionary dict;
-	Custom cust(2, 0, 8, pattern, dict);
-		cust.make_poem();
+	Custom sonet(3,0,8,pattern, dict);
+	sonet.make_poem();
+	sonet.print_poem();
+
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 
 	sf::String Text;

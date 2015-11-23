@@ -56,7 +56,7 @@ char* SentencePattern::get_pattern(){
 	}
 	char * pattern = new char[(*iter).length() + 1];
 	strcpy_s(pattern,(*iter).length()+1, (*iter).c_str());
-	cout << pattern << endl;
+	//cout << pattern << endl;
 return pattern;
 }
 	

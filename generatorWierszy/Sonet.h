@@ -10,7 +10,7 @@ public:
 	Sonet(SentencePattern &pattern,Dictionary &dictionary);
 	~Sonet();
 protected:
-	//char** choose_words(char** patterns_table); // choose prperty rhyme in verse
+	virtual string choose_words(char** patterns_table); // choose property rhyme in verse
 
 private:
 	
