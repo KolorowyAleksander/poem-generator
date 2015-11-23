@@ -13,23 +13,26 @@
 
 
 int main(){
-	
-	//testy testy
-	SentencePattern pattern;
-	Dictionary dict;
-
-	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
+	//initialization of needed things
+	SentencePattern pattern; //patterns
+	Dictionary dict; //dictionary
+	sf::RenderWindow window(sf::VideoMode(500, 550), "Generator",sf::Style::None); //create a sfml renderwindow
 
 	sf::String Text;
+	sf::String Title;
+	sf::RectangleShape rectangle(sf::Vector2f(250, 75));
+	rectangle.setFillColor(sf::Color(100, 100, 100));
+	rectangle.move(sf::Vector2f(10, 10));
 	string input_text;
 	//the following part of code is based on sfml tutorial foun on sfml site, its common way to handle the window
 	
 	while (window.isOpen()){
 		sf::Event event;
 		sf::Font font;	//instance of font class
-		if (!font.loadFromFile("Paper Banner-Regular.ttf")){} //loading font from file
-		sf::Text text(input_text, font, 36);	//instance of text class
-		text.setColor(sf::Color::Red); //color
+		if (!font.loadFromFile("Pollito Peligroso.ttf")){} //loading font from file
+		sf::Text text(input_text, font, 50);	//instance of text class
+		text.move(sf::Vector2f(5, 5));
+		text.setColor(sf::Color::White); //color
 		while (window.pollEvent(event)){
 			// ReSharper disable once CppIncompleteSwitchStatement
 			switch (event.type){
@@ -48,11 +51,12 @@ int main(){
 					input_text += static_cast<char>(event.text.unicode);
 					std::cout << input_text << std::endl;
 				}
-				
+
 			}
 		}
 
 		window.clear();
+		window.draw(rectangle);
 		window.draw(text);
 		window.display();
 	}
