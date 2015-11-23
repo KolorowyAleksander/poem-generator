@@ -22,7 +22,6 @@ int main(){
 	Dictionary dict;
 	Custom cust(2, 0, 8, pattern, dict);
 		cust.make_poem();
-	//cout << cust.poem;
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 
 	sf::String Text;

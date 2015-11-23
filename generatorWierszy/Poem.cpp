@@ -90,16 +90,28 @@ string Poem::get_text(char*verse){
 			if (verse[i + 2] == '#'){ //jezeli to ostatnie slowo
 				if (this->rhymed && this->rhyme_syllable != ""){
 					word = dictionary.get_word(type_word, last, this->rhyme_syllable);
+					if (!word){
+						return "";
+					}
 				}
 				else{
 					word = dictionary.get_word(type_word, last);
+					if (!word){
+						return "";
+					}
 				}
 			}
 			else{
 				if (this->rhymed && this->rhyme_syllable != ""){
 					word = dictionary.get_word(type_word, medium, this->rhyme_syllable);
+					if (!word){
+						return "";
+					}
 				}
 				word = dictionary.get_word(type_word, medium);
+				if (!word){
+					return "";
+				}
 			}
 			string_verse = string_verse + word->word;
 		}
@@ -143,6 +155,9 @@ string  Poem::choose_words(char **patterns_table){
 				rhyme_syllable = last_syllable_of_verse(poem[i - 1]);// find syllable that will rhyme with the next verse
 			}
 		poem[i] = get_text(patterns_table[i]);
+		while (poem[i] == ""){
+			poem[i] = get_text(patterns_table[i]);
+		}
 		cout << poem[i] << endl;
 		final_poem = final_poem + poem[i] + '\n';
 	}
