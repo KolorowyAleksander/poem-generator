@@ -19,11 +19,11 @@ int main(){
 	
 	//testy testy
 	srand(time(nullptr));
-	SentencePattern pattern;
-	Dictionary dict;
-	Custom sonet(3,0,8,pattern, dict);
-	sonet.make_poem();
-	sonet.print_poem();
+	SentencePattern *pattern = new SentencePattern();
+	Dictionary *dict = new Dictionary();
+	Custom *custom = new Custom(2,0,8,*pattern, *dict);
+	//sonet.make_poem();
+	//sonet.print_poem();
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 
@@ -64,6 +64,9 @@ int main(){
 		window.display();
 	}
 	//here go every de-initialization methods we need / also saving them to file and stuff
+	delete custom;
+	delete pattern;
+	delete dict;
 	return 0;
 }
 #endif

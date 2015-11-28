@@ -12,7 +12,7 @@ class Poem
 public:
 	Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary);
 	Poem();
-	~Poem();
+	virtual ~Poem();
 	void make_poem();
 	void print_poem();
 
