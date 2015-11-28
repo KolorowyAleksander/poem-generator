@@ -9,6 +9,7 @@ Poem::Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &
 	//this->dictionary = dictionary;
 	this->rhymed = rhymed;
 	this->syll_per_verse = 8;
+	this->patterns_table = new char*[lines_number];
 }
 
 Poem::Poem(SentencePattern& pattern, Dictionary& dictionary) : dictionary(dictionary),pattern(pattern){}
@@ -20,8 +21,8 @@ Poem::~Poem()
 
 
 void Poem::make_poem(){
-	char ** patterns_table = this->choose_patterns();
-	this->choose_words(patterns_table);
+	patterns_table = this->choose_patterns();
+	this->choose_words();
 }
 
 void Poem::print_poem(){
@@ -30,7 +31,6 @@ void Poem::print_poem(){
 
 char** Poem::choose_patterns(){
 	char ** patterns_table = new char*[lines_number];
-	//srand(time(NULL));
 	for (int i = 0; i < lines_number; i++){
 		patterns_table[i] = pattern.get_pattern();
 	}
@@ -72,69 +72,79 @@ string Poem::get_text(char*verse){
 	int num_words = this->count_words(verse); // number of words to transform in verse
 	
 	//division of syllables per words
-	int medium;
-	int last;
-	int syllab_to_div = this->syll_per_verse - stat_num_syllables(verse);
-	if (syllab_to_div % num_words == 0){ // 
-		medium = syllab_to_div / num_words;
-		last = medium;
+	int temp;
+	int syllab_to_div = this->syll_per_verse - stat_num_syllables(verse) - num_words;
+	int *tab = new int[num_words];
+	for (int i = 0; i < num_words; i++){
+		tab[i] = 1;
 	}
-	else{
-		medium = syllab_to_div / (num_words - 1);
-		last = syllab_to_div - medium*(num_words - 1);
+	int n = 0;
+	while (syllab_to_div){
+		if (n >= num_words){
+			n = 0;
+		}
+		if (syllab_to_div < 5){
+			temp= rand() % syllab_to_div + 1 ; // jezeli syllab_t_dic jest jeden to temp zawsze bedzie rowne 1
+			if (tab[n] + temp < 5){
+				tab[n] =tab[n] +temp;
+				syllab_to_div =syllab_to_div -temp;
+			}
+			
+		}
+		else {
+			temp = rand() % 5;
+			if (tab[n] + temp < 5){
+				tab[n] = tab[n] + temp;
+				syllab_to_div = syllab_to_div - temp;
+			}
+		}
+		
+		n++;
 	}
-	if (last < 1 || last>4 || medium < 1 || medium>4){
-		return "";
-	}
+	
+	//int medium;
+	//int last;
+	//if (syllab_to_div % num_words == 0){ // 
+	//	medium = syllab_to_div / num_words;
+	//	last = medium;
+	//}
+	//else{
+	//	medium = syllab_to_div / (num_words - 1);
+	//	last = syllab_to_div - medium*(num_words - 1);
+	//}
+	//if (last < 1 || last>4 || medium < 1 || medium>4){
+	//	return "";
+	//}
 
 	//transformate patterns into text
-	int i = 0;
+	n  = 0;
+	int num_syll = 0;
 	string string_verse;
 	Word *word;
 	int type_word;
-	char next_char = verse[i];
+	char next_char = verse[n];
 	while (next_char != '#'){
 
 
 		if (next_char <'9' && next_char>'0'){ //need to change into word
 			type_word = next_char - '0';
 
-			if (verse[i + 2] == '#'){ // if it's the last word
-
-				if (this->rhymed && this->rhyme_syllable != ""){ //if it's rhymed
-					word = dictionary.get_word(type_word, last, this->rhyme_syllable);
+			if (verse[n + 2] == '#'&&this->rhymed && this->rhyme_syllable != ""){ // if it's the last word and we need to find rhyme
+					word = dictionary.get_word(type_word, tab[num_syll], this->rhyme_syllable);
+					num_syll++;
 					if (!word){
 						return "";
 					}
 				}
 				
-				
-				else{ // if it isn't rhymed
-					word = dictionary.get_word(type_word, last);
-					if (!word){
-						return "";
-					}
-				}
-			}
 			
-			
-			
-			else{ //if it's not the last word
+			else{ //if it's not the last word or it's not rhyme
 
-				if (this->rhymed && this->rhyme_syllable != ""){//if it's rhymed
-					word = dictionary.get_word(type_word, medium, this->rhyme_syllable);
+					word = dictionary.get_word(type_word, tab[num_syll]);
+					num_syll++;
 					if (!word){
 						return "";
 					}
-				}
-				else{ // if it's not rhymed
-					word = dictionary.get_word(type_word, medium);
-
-					if (!word){
-						return "";
-					}
-				}
-				
 			}
 
 
@@ -144,12 +154,12 @@ string Poem::get_text(char*verse){
 
 
 		else{ // next_char is a punctuation mark,articel or space
-			string_verse = string_verse + verse[i];
+			string_verse = string_verse + verse[n];
 		}
 
 
-		i++;
-		next_char = verse[i]; // go to next char
+		n++;
+		next_char = verse[n]; // go to next char
 
 	}
 	 
@@ -159,7 +169,7 @@ string Poem::get_text(char*verse){
 
 
 
-string  Poem::choose_words(char **patterns_table){
+string  Poem::choose_words(){
 	//initial 
 	this->rhyme_syllable = "";
 	string final_poem = "";

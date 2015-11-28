@@ -21,10 +21,16 @@ int main(){
 	srand(time(nullptr));
 	SentencePattern pattern;
 	Dictionary dict;
+<<<<<<< HEAD
 	Poem poem(1, 0, pattern, dict);
 	//Custom *custom = new Custom(2,0,8,*pattern, *dict);
 	//sonet.make_poem();
 	//sonet.print_poem();
+=======
+	Haiku sonet(pattern, dict);
+	sonet.make_poem();
+	sonet.print_poem();
+>>>>>>> origin/master
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 
@@ -65,7 +71,10 @@ int main(){
 		window.display();
 	}
 	//here go every de-initialization methods we need / also saving them to file and stuff
+<<<<<<< HEAD
 	//delete custom;
+=======
+>>>>>>> origin/master
 	return 0;
 }
 #endif

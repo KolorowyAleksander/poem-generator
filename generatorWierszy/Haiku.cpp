@@ -10,28 +10,30 @@ Haiku :: ~Haiku(){
 char** Haiku::choose_patterns(){
 	//initial
 	int rand_word; // contains int type of word
-	char ** patterns_table = new char*[lines_number];
 
 	for (int i = 0; i < lines_number; i++){
-		int size = (rand() % 4) + 2; // random number of words in verse
-		char * verse = new char[size + size - 1]; //size = number of words, size-1  = number of spaces between words
+		int size = (rand() % 4) + 3; // random number of words in verse
+		string verse="";
 		for (int n = 0; n < size; n++){
 			if (n % 2 == 0){ // if it's word turn
 				rand_word = (rand() % 6) + 1; // generates random type of word
 				char ch_rand_word[2];
 				sprintf_s(ch_rand_word, 2, "%d", rand_word); // change int to char;
-				verse[n] = *ch_rand_word;
+				verse = verse + *ch_rand_word;
 			}
 			else{//if it's space turn
-				verse[n] = 32;
+				verse  =verse +  ' ';
 			}
 		}
-		patterns_table[i] = verse;
+		verse = verse + "#0";
+		patterns_table[i] = new char[verse.length()]; 
+		memcpy(patterns_table[i], verse.data(), verse.size());
+		patterns_table[i][verse.size()] = '\0';
 	}
 	return patterns_table;
 }
 
-string Haiku::choose_words(char **patterns_table){
+string Haiku::choose_words(){
 	//initial
 	int i = 0;
 	string *poem = new string[lines_number];
@@ -39,7 +41,7 @@ string Haiku::choose_words(char **patterns_table){
 
 	//choosing words until get right size of verse
 	this->syll_per_verse = 5;
-	poem[0] = get_text(patterns_table[0]);
+	poem[0] = get_text(this->patterns_table[0]);
 	while (poem[0]==""){
 		poem[0] = get_text(patterns_table[0]);
 	}

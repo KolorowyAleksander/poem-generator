@@ -25,7 +25,10 @@ Dictionary::Dictionary(){
 
 Dictionary::~Dictionary(){
 	//stuff
+<<<<<<< HEAD
 	std::cout << "Blad";
+=======
+>>>>>>> origin/master
 	std::fstream file(this->filename);
 	file.open(this->filename, std::ios::out);
 	file.clear();
