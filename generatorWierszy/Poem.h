@@ -11,14 +11,10 @@ class Poem
 {
 public:
 	Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary);
-<<<<<<< HEAD
 	Poem(SentencePattern &pattern, Dictionary &dictionary);
 	//Poem();
 	virtual ~Poem();
-=======
 	Poem();
-	~Poem();
->>>>>>> origin/master
 	void make_poem();
 	void print_poem();
 
