@@ -1,6 +1,11 @@
 #include "Haiku.h"
 
-Haiku::Haiku(SentencePattern &pattern, Dictionary &dictionary) : Poem(3, 0, pattern, dictionary) {
+Haiku::Haiku( Dictionary &dictionary)  {
+	this->lines_number = 3;
+	this->dictionary = dictionary;
+	this->rhymed = 0;
+	this->syll_per_verse = 5;
+	this->patterns_table = new char*[lines_number];
 }
 
 Haiku :: ~Haiku(){

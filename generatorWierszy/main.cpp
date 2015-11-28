@@ -8,6 +8,7 @@
 #include "Haiku.h"
 #include "Word.h"
 #include "word_type.h"
+#include "Dadaistic.h"
 #ifdef _MSC_VER
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -21,7 +22,7 @@ int main(){
 	srand(time(nullptr));
 	SentencePattern pattern;
 	Dictionary dict;
-	Haiku sonet(pattern, dict);
+	Custom sonet(6,0,1,pattern,dict);
 	sonet.make_poem();
 	sonet.print_poem();
 

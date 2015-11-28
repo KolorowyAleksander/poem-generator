@@ -2,7 +2,7 @@
 
 Sonet::Sonet(SentencePattern &pattern,Dictionary &dictionary) 
 	: Poem(14,0,pattern, dictionary)  {
-	this->syll_per_verse = 13;
+	this->syll_per_verse = 14;
 }
 
 Sonet::~Sonet(){
@@ -43,7 +43,7 @@ string Sonet :: choose_words(char** patterns_table){
 		patterns_table[12] = pattern.get_pattern();
 		poem[12] = get_text(patterns_table[12]);
 	}
-	final_poem = final_poem + poem[12] + '\n';
+	final_poem = final_poem + poem[12] + "\n";
 	this->rhyme_syllable = last_syllable_of_verse(poem[12]);
 	poem[13] = get_text(patterns_table[1]);
 	while (poem[13] == ""){ //get new pattern until find sth with appropriate number of words

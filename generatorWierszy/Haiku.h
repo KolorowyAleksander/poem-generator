@@ -7,15 +7,15 @@
 
 class Haiku : public  Poem {
 public:
-	Haiku(SentencePattern &pattern,Dictionary &dictionary);
+	Haiku(Dictionary &dictionary);
 	~Haiku();
    
 protected:
-	char** choose_patterns(); // generates random patterns without any grammar
-	string choose_words(); // choose property verse : 5,7,5 syllables per line
+	
 
 private:
-	
+	char** choose_patterns(); // generates random patterns without any grammar
+	string choose_words(); // choose property verse : 5,7,5 syllables per line
 };
 
 #endif

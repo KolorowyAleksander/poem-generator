@@ -66,57 +66,46 @@ int Poem::count_words(char*verse){
 	}
 	return how_many;
 }
-string Poem::get_text(char*verse){
 
-	int num_words = this->count_words(verse); // number of words to transform in verse
-	
+int * Poem::div_syllables(int num_words,int stat_num_syllables){
 	//division of syllables per words
 	int temp;
-	int syllab_to_div = this->syll_per_verse - stat_num_syllables(verse) - num_words;
+	int syllab_to_div = this->syll_per_verse - num_words - stat_num_syllables;
+	if (syllab_to_div < 0){
+		return NULL;
+	}
 	int *tab = new int[num_words];
 	for (int i = 0; i < num_words; i++){
 		tab[i] = 1;
 	}
-	int n = 0;
-	while (syllab_to_div){
-		if (n >= num_words){
-			n = 0;
+	int impossible = 0;
+	while (syllab_to_div>0){
+		temp = rand() %num_words;
+		if (tab[temp] < 5){
+			tab[temp] = tab[temp] + 1;
+			syllab_to_div--;
 		}
-		if (syllab_to_div < 5){
-			temp= rand() % syllab_to_div + 1 ; // jezeli syllab_t_dic jest jeden to temp zawsze bedzie rowne 1
-			if (tab[n] + temp < 5){
-				tab[n] =tab[n] +temp;
-				syllab_to_div =syllab_to_div -temp;
-			}
-			
+		if (impossible == 100){
+			return NULL;
 		}
-		else {
-			temp = rand() % 5;
-			if (tab[n] + temp < 5){
-				tab[n] = tab[n] + temp;
-				syllab_to_div = syllab_to_div - temp;
-			}
-		}
-		
-		n++;
+		impossible++;
 	}
-	
-	//int medium;
-	//int last;
-	//if (syllab_to_div % num_words == 0){ // 
-	//	medium = syllab_to_div / num_words;
-	//	last = medium;
-	//}
-	//else{
-	//	medium = syllab_to_div / (num_words - 1);
-	//	last = syllab_to_div - medium*(num_words - 1);
-	//}
-	//if (last < 1 || last>4 || medium < 1 || medium>4){
-	//	return "";
-	//}
+
+
+	return tab;
+}
+string Poem::get_text(char*verse){
+
+	// assigns to each word the number of syllables
+	int num_words = count_words(verse);
+	int stat_syll = stat_num_syllables(verse);
+	int *tab = div_syllables(num_words, stat_syll); 
+	if (tab == NULL){
+		return "";
+	}
 
 	//transformate patterns into text
-	n  = 0;
+	int n  = 0;
 	int num_syll = 0;
 	string string_verse;
 	Word *word;
