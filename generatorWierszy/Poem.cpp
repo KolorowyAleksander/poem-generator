@@ -8,7 +8,6 @@ dictionary(dictionary), pattern(pattern), lines_number(lines_number), rhymed(rhy
 	patterns_table = new char*[lines_number];
 }
 
-Poem::Poem(SentencePattern& pattern, Dictionary& dictionary) : dictionary(dictionary),pattern(pattern){}
 
 Poem::~Poem(){
 	delete[] patterns_table;

@@ -11,7 +11,6 @@ class Poem
 {
 public:
 	Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary);
-	Poem(SentencePattern &pattern, Dictionary &dictionary);
 	//Poem();
 	virtual ~Poem();
 	Poem();
