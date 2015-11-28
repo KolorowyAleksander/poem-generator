@@ -2,21 +2,16 @@
 
 
 Poem::Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary) :
-	dictionary(dictionary), pattern(pattern)
+dictionary(dictionary), pattern(pattern), lines_number(lines_number), rhymed(rhymed)
 {
-	this->lines_number = lines_number;
-	//this->pattern = pattern;
-	//this->dictionary = dictionary;
-	this->rhymed = rhymed;
-	this->syll_per_verse = 8;
-	this->patterns_table = new char*[lines_number];
+	syll_per_verse = 8;
+	patterns_table = new char*[lines_number];
 }
 
 Poem::Poem(SentencePattern& pattern, Dictionary& dictionary) : dictionary(dictionary),pattern(pattern){}
 
-Poem::~Poem()
-{
-	cout << "lele\n";
+Poem::~Poem(){
+	delete[] patterns_table;
 }
 
 

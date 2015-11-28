@@ -22,6 +22,7 @@ int main(){
 	SentencePattern pattern;
 	Dictionary dict;
 	Poem poem(1, 0, pattern, dict);
+	poem.make_poem();
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 

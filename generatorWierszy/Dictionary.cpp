@@ -25,7 +25,6 @@ Dictionary::Dictionary(){
 
 Dictionary::~Dictionary(){
 	//stuff
-	std::cout << "Blad";
 	std::fstream file(this->filename);
 	file.open(this->filename, std::ios::out);
 	file.clear();
