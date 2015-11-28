@@ -5,9 +5,8 @@ class Custom : public  Poem {
 public:
 	Custom(int lines_number,bool rhymed,int syll_per_verse, SentencePattern &pattern, Dictionary &dictionary);
 	~Custom();
-
-private:
-
+protected:
+	int syll_per_verse;
 };
 
 #endif
