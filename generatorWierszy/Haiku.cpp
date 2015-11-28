@@ -1,11 +1,8 @@
 #include "Haiku.h"
 
-Haiku::Haiku(SentencePattern &pattern, Dictionary &dictionary) : Poem(3, 0, pattern, dictionary) {
-}
+Haiku::Haiku(SentencePattern &pattern, Dictionary &dictionary) : Poem(3, 0, pattern, dictionary) {}
 
-Haiku :: ~Haiku(){
-
-}
+Haiku :: ~Haiku(){}
 
 char** Haiku::choose_patterns(){
 	//initial

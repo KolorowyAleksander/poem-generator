@@ -4,7 +4,6 @@
 Poem::Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary) :
 dictionary(dictionary), pattern(pattern), lines_number(lines_number), rhymed(rhymed)
 {
-	syll_per_verse = 8;
 	patterns_table = new char*[lines_number];
 }
 
