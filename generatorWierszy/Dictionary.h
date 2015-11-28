@@ -15,6 +15,8 @@ public:
 	void print_list();
 	friend std::ostream& operator<<(std::ostream &os, const Word &a); //overloaded ostream operator for proper serialization
 private:
+	void read_from_file();
+	void save_to_file();
 	std::list<Word> *words; //A container to keep the words in
 	std::string filename = "dictionary.txt";
 

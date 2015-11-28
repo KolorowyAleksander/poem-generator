@@ -2,13 +2,13 @@
 #include <iostream>
 #include "Dictionary.h"
 #include "SentencePattern.h"
+#include "Word.h"
 #include "Poem.h"
 #include "Custom.h"
 #include "Sonet.h"
 #include "Haiku.h"
-#include "Word.h"
-#include "word_type.h"
 #include "Dadaistic.h"
+#include "word_type.h"
 #ifdef _MSC_VER
 #define _CRT_SECURE_NO_WARNINGS
 

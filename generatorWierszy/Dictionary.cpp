@@ -3,11 +3,18 @@
 #include <algorithm>
 #include <fstream>
 #include "word_type.h"
-#include <ctime>
 
 Dictionary::Dictionary(){
 	this->words = new std::list<Word>; //make a list for words from file
-	//read from file to list
+	read_from_file(); //read from file
+}
+
+Dictionary::~Dictionary(){
+	save_to_file(); //save to file
+	delete this->words; //free list from memory
+}
+
+void Dictionary::read_from_file(){
 	std::fstream file(this->filename);
 	file.open(this->filename, std::ios::in);
 	file.clear();
@@ -20,18 +27,15 @@ Dictionary::Dictionary(){
 			std::cout << "some kinda error happened\n";
 	}
 	file.close();
-	//stuff
 }
 
-Dictionary::~Dictionary(){
-	//stuff
+void Dictionary::save_to_file(){
 	std::fstream file(this->filename);
 	file.open(this->filename, std::ios::out);
 	file.clear();
 	for (auto i : *words)
 		file << i;
 	file.close();
-	delete this->words; //free list from memory
 }
 
 void Dictionary::add(std::string word, int type){
@@ -49,6 +53,7 @@ void Dictionary::print_list(){
 		std::cout << it->word << std::endl;
 	}
 }
+
 
 Word *Dictionary::get_word(int type){
 	Word *a = nullptr;
