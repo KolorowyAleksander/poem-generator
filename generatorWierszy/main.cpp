@@ -8,6 +8,7 @@
 #include "Haiku.h"
 #include "Word.h"
 #include "word_type.h"
+#include "Dadaistic.h"
 #ifdef _MSC_VER
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -22,7 +23,7 @@ int main(){
 	SentencePattern pattern;
 	Dictionary dict;
 	Poem poem(1, 0, pattern, dict);
-	poem.make_poem();
+	Dadaistic dada(pattern, dict);
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 

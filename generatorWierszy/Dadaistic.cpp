@@ -2,9 +2,6 @@
 
 Dadaistic::Dadaistic(SentencePattern &pattern, Dictionary &dictionary): Poem(rand()%20 +1, rand()%2, pattern,dictionary){
 	this->syll_per_verse = NULL;
-	this->dictionary = dictionary;
-	this->pattern = pattern;
-
 }
 
 Dadaistic::~Dadaistic(){

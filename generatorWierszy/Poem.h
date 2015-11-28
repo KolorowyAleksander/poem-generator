@@ -11,9 +11,7 @@ class Poem
 {
 public:
 	Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary);
-	//Poem();
 	virtual ~Poem();
-	Poem();
 	void make_poem();
 	void print_poem();
 
@@ -36,9 +34,6 @@ protected:
 	int stat_num_syllables(char*verse); // ile ma wbudowanych sylab
 	virtual string choose_words();// with function get_text finding a words with property number of syllabes
 	int * div_syllables(int num_words); // 
-
-private:
-	
 };
 
 
