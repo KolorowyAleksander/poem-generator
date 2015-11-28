@@ -7,7 +7,7 @@
 
 class Sonet : public  Poem {
 public:
-	Sonet(SentencePattern &pattern,Dictionary &dictionary);
+	Sonet(SentencePattern &pattern, Dictionary &dictionary);
 	~Sonet();
 protected:
 	virtual string choose_words(char** patterns_table); // choose property rhyme in verse

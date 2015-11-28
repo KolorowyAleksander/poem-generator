@@ -1,20 +1,21 @@
 #include "Poem.h"
 
 
-Poem::Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary)
+Poem::Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary) :
+	dictionary(dictionary), pattern(pattern)
 {
 	this->lines_number = lines_number;
-	this->pattern = pattern;
-	this->dictionary = dictionary;
+	//this->pattern = pattern;
+	//this->dictionary = dictionary;
 	this->rhymed = rhymed;
 	this->syll_per_verse = 8;
 }
-Poem::Poem()
-{
-}
+
+Poem::Poem(SentencePattern& pattern, Dictionary& dictionary) : dictionary(dictionary),pattern(pattern){}
 
 Poem::~Poem()
 {
+	cout << "lele\n";
 }
 
 

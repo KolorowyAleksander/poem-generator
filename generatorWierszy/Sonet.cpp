@@ -1,7 +1,7 @@
 #include"Sonet.h"
 
 Sonet::Sonet(SentencePattern &pattern,Dictionary &dictionary) 
-	: Poem(14,0,pattern, dictionary)  {
+	: Poem(14,0, pattern, dictionary)  {
 	this->syll_per_verse = 13;
 }
 

@@ -19,9 +19,10 @@ int main(){
 	
 	//testy testy
 	srand(time(nullptr));
-	SentencePattern *pattern = new SentencePattern();
-	Dictionary *dict = new Dictionary();
-	Custom *custom = new Custom(2,0,8,*pattern, *dict);
+	SentencePattern pattern;
+	Dictionary dict;
+	Poem poem(1, 0, pattern, dict);
+	//Custom *custom = new Custom(2,0,8,*pattern, *dict);
 	//sonet.make_poem();
 	//sonet.print_poem();
 
@@ -64,9 +65,7 @@ int main(){
 		window.display();
 	}
 	//here go every de-initialization methods we need / also saving them to file and stuff
-	delete custom;
-	delete pattern;
-	delete dict;
+	//delete custom;
 	return 0;
 }
 #endif

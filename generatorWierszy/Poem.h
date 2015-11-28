@@ -11,7 +11,8 @@ class Poem
 {
 public:
 	Poem(int lines_number, bool rhymed, SentencePattern &pattern, Dictionary &dictionary);
-	Poem();
+	Poem(SentencePattern &pattern, Dictionary &dictionary);
+	//Poem();
 	virtual ~Poem();
 	void make_poem();
 	void print_poem();
@@ -24,8 +25,8 @@ protected:
 	string rhyme_syllable; // last syllable of verse to find rhyme, NULL if unnecessary
 
 	//list<Word> *word; // list of words from which arises a poem
-	Dictionary dictionary;
-	SentencePattern pattern;
+	Dictionary &dictionary;
+	SentencePattern &pattern;
 	
 	virtual char ** choose_patterns(); // for each line choose patterns from pattern_list 
 	char * get_text_old(char* verse); // change pattern to property words creating one single verse
