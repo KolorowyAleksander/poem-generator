@@ -25,6 +25,7 @@ int main(){
 	Custom sonet(6,0,7,pattern,dict);
 	sonet.make_poem();
 	sonet.print_poem();
+	sonet.save_poem();
 
 	sf::RenderWindow window(sf::VideoMode(500, 500), "Generator",sf::Style::None); //create a sfml renderwindow
 
