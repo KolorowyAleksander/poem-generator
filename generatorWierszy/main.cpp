@@ -21,7 +21,7 @@ int main(){
 	srand(time(nullptr));
 	SentencePattern pattern;
 	Dictionary dict;
-	Custom sonet(3,0,8,pattern, dict);
+	Haiku sonet(pattern, dict);
 	sonet.make_poem();
 	sonet.print_poem();
 

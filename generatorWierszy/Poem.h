@@ -22,7 +22,7 @@ protected:
 	bool rhymed; // TRUE if poem is rhymed, FALSE else
 	string poem; // final text of poem
 	string rhyme_syllable; // last syllable of verse to find rhyme, NULL if unnecessary
-
+	char ** patterns_table;
 	//list<Word> *word; // list of words from which arises a poem
 	Dictionary dictionary;
 	SentencePattern pattern;
@@ -33,7 +33,8 @@ protected:
 	string last_syllable_of_verse(string verse); // finding last word of verse
 	int count_words(char*verse); // count words in verse
 	int stat_num_syllables(char*verse); // ile ma wbudowanych sylab
-	virtual string choose_words(char**patterns_table);// with function get_text finding a words with property number of syllabes
+	virtual string choose_words();// with function get_text finding a words with property number of syllabes
+	int * div_syllables(int num_words); // 
 
 private:
 	
