@@ -164,7 +164,7 @@ string  Poem::choose_words(){
 	string *poem = new string[lines_number];
 
 	for (int i = 0; i < lines_number; i++){
-		if (rhymed && i>0){ // if it's rhymed poem and it's not first line
+		if (rhymed && i>0 && i%2==1){ // if it's rhymed poem and it's not first line
 				rhyme_syllable = last_syllable_of_verse(poem[i - 1]);// find syllable that will rhyme with the next verse
 			}
 		poem[i] = get_text(patterns_table[i]);
@@ -179,3 +179,9 @@ string  Poem::choose_words(){
 	return final_poem;
 }
 
+void Poem::save_poem(){
+	ofstream NewPoem;
+	NewPoem.open("poem.txt");
+	NewPoem << this->poem << endl;
+	NewPoem.close();
+}

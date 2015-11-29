@@ -15,7 +15,7 @@ public:
 	~Poem();
 	void make_poem();
 	void print_poem();
-
+	void save_poem(); //save text of poem to file poem.txt
 protected:
 	int lines_number; // number of verse
 	int syll_per_verse; // number of syllables for each verse
@@ -34,6 +34,7 @@ protected:
 	int count_words(char*verse); // count words in verse
 	int stat_num_syllables(char*verse); // ile ma wbudowanych sylab
 	int * div_syllables(int num_words, int stat_num_syllables); // assigns to each word the number of syllables
+	
 
 private:
 	
