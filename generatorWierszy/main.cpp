@@ -40,7 +40,6 @@ int main(){
 	} //initializing a vector of rectangles for buttons
 	
 	
-<<<<<<< HEAD
 	//loading icons
 	sf::Texture texture;
 	sf::Sprite edit;
@@ -48,16 +47,7 @@ int main(){
 		edit.setTexture(texture);
 		edit.setPosition(sf::Vector2f(15, 340));
 	}
-=======
-	//testy testy
-	srand(time(nullptr));
-	SentencePattern pattern;
-	Dictionary dict;
-    Sonet sonet(pattern,dict);
-	sonet.make_poem();
-	sonet.print_poem();
-	sonet.save_poem();
->>>>>>> origin/master
+
 
 
 	string input_text;
