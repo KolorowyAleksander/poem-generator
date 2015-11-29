@@ -4946,3 +4946,4 @@ keenly Adverb
 truthfully Adverb
 irritably Adverb
 dreamily Adverb
+nabuchodonozor Concrete Noun

@@ -7,7 +7,7 @@
 
 class Haiku : public  Poem {
 public:
-	Haiku(Dictionary &dictionary);
+	Haiku(SentencePattern &pattern,Dictionary &dictionary);
 	~Haiku();
    
 protected:

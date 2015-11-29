@@ -5,7 +5,7 @@
 
 class Dadaistic : public  Poem {
 public:
-	Dadaistic(Dictionary &dictionary);
+	Dadaistic(SentencePattern& pattern, Dictionary& dictionary);
 	~Dadaistic();
 protected:
 	char** choose_patterns(); // generates random patterns without any grammar

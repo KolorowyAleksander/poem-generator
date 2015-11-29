@@ -13,9 +13,9 @@ public:
 	Word* get_word(int type, int syllables); //Find random word of exact type and exact syllabes number
 	Word* get_word(int type, int syllables, std::string last_syllable); //Find random word of exact type and exact syllabes number and exact last syllable
 	void print_list();
-	friend std::ostream& operator<<(std::ostream &os, const Word &a); //overloaded ostream operator for proper serialization
 	void read_from_file();
 	void save_to_file();
+	friend std::ostream& operator<<(std::ostream &os, const Word &a); //overloaded ostream operator for proper serialization
 private:
 	std::list<Word> *words; //A container to keep the words in
 	std::string filename = "dictionary.txt";

@@ -1,6 +1,6 @@
 #include "Haiku.h"
 
-Haiku::Haiku( Dictionary &dictionary)  {
+Haiku::Haiku(SentencePattern &pattern, Dictionary &dictionary) : Poem(pattern,dictionary) {
 	this->lines_number = 3;
 	this->dictionary = dictionary;
 	this->rhymed = 0;

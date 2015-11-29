@@ -51,14 +51,24 @@ int main(){
 
 
 	string input_text;
-
+	string output_text;
+	int syllables = 1;
+	int verses = 1;
+	bool rhymed = false;
 	while (window.isOpen()){
 		sf::Event event;
 
-		sf::Text text(input_text, font, 20);	//instance of text class
-		text.setColor(sf::Color(220, 231, 117, 255)); //color
-		text.setPosition(220, 405);
+		sf::Text text(input_text, font, 20);	//thats for input text
+		text.setColor(sf::Color(130, 119, 23, 255)); //color
+		text.setPosition(225, 415);
 		
+		sf::Text syll_output(to_string(syllables), font, 25); //thats for syllables number
+		syll_output.setColor(sf::Color(130, 119, 23, 255));
+		syll_output.setPosition(182, 350);
+
+		sf::Text verses_output(to_string(verses), font, 25);
+		verses_output.setColor(sf::Color(130, 119, 23, 255));
+		verses_output.setPosition(83, 350);
 		while (window.pollEvent(event)){
 			// ReSharper disable once CppIncompleteSwitchStatement
 			switch (event.type){
@@ -80,26 +90,50 @@ int main(){
 			case sf::Event::MouseButtonPressed:
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
 					sf::Vector2i position = sf::Mouse::getPosition(window);
-					if ( position.x >= 15 &&position.x <= 215 && position.y >=15 && position.y <= 65)
-						cout << "Haiku";
-					if (position.x >= 15 && position.x <= 215 && position.y >= 80 && position.y <= 130)
-						cout << "Sonet";
-					if (position.x >= 15 && position.x <= 215 && position.y >= 145 && position.y <= 195)
-						cout << "Dadaistic";
-					if (position.x >= 15 && position.x <= 215 && position.y >= 210 && position.y <= 260)
-						cout << "Custom";
+					if (position.x >= 15 && position.x <= 215 && position.y >= 15 && position.y <= 65){
+						cout << "Haiku\n";
+						Haiku haiku(pattern,dict);
+						haiku.make_poem();
+						haiku.print_poem();
+					}
+					if (position.x >= 15 && position.x <= 215 && position.y >= 80 && position.y <= 130) {
+						cout << "Sonet\n";
+						Sonet sonet(pattern, dict);
+						sonet.make_poem();
+						sonet.print_poem();
+					}
+
+					if (position.x >= 15 && position.x <= 215 && position.y >= 145 && position.y <= 195){
+						cout << "Dadaistic\n";
+						Dadaistic dadaistic(pattern, dict);
+						dadaistic.make_poem();
+						dadaistic.print_poem();
+					}
+					if (position.x >= 15 && position.x <= 215 && position.y >= 210 && position.y <= 260){
+						cout << "Custom\n";
+						Custom custom(verses, rhymed, syllables, pattern, dict);
+						custom.make_poem();
+						custom.print_poem();
+					}
 					if (position.x >= 15 && position.x <= 215 && position.y >= 275 && position.y <= 325)
 						cout << "Rhymed";
-					if (position.x >= 15 && position.x <= 65 && position.y >= 340 && position.y <= 364)
-						cout << "Verses plus";
-					if (position.x >= 15 && position.x <= 65 && position.y >= 365 && position.y <= 390)
-						cout << "Verses minus";
-					if (position.x >= 115 && position.x <= 165 && position.y >= 340 && position.y <= 364)
-						cout << "Syllabs plus";
-					if (position.x >= 115 && position.x <= 165 && position.y >= 365 && position.y <= 390)
-						cout << "Syllabs minus";
+					if (position.x >= 15 && position.x <= 65 && position.y >= 340 && position.y <= 364){
+						if (verses >= 1 && verses < 9)
+							verses++;
+					}
+					if (position.x >= 15 && position.x <= 65 && position.y >= 365 && position.y <= 390){
+						if (verses >1 && verses <= 9)
+							verses--;
+					}
+					if (position.x >= 115 && position.x <= 165 && position.y >= 340 && position.y <= 364){
+						if (syllables >= 1 && syllables < 9)
+							syllables++;
+					}
+					if (position.x >= 115 && position.x <= 165 && position.y >= 365 && position.y <= 390){
+						if (syllables > 1 && syllables <= 9)
+							syllables--;
+					}
 					if (position.x >= 15 && position.x <= 65 && position.y >= 405 && position.y <= 455){ //editing words
-						cout << "Edit";
 						dict.save_to_file();
 						system("notepad.exe dictionary.txt");
 						dict.read_from_file();
@@ -110,7 +144,13 @@ int main(){
 						pattern.read_patterns();
 					}
 					if (position.x >= 165 && position.x <= 215 && position.y >= 405 && position.y <= 455){ //add word to input
-						cout << input_text;
+						if (input_text.empty()){
+							size_t found = input_text.find_first_of(" ");
+							if (Word_type::strToInt(input_text.substr(found + 1)) != 0)
+								dict.add(input_text.substr(0, found), Word_type::strToInt(input_text.substr(found + 1)));
+							dict.save_to_file();
+							dict.read_from_file();
+						}
 					}
 				}
 			}
@@ -122,6 +162,8 @@ int main(){
 			window.draw(rectangle);
 		}
 		window.draw(edit);
+		window.draw(verses_output);
+		window.draw(syll_output);
 		window.draw(text);
 		window.display();
 	}
