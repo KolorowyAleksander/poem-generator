@@ -1,7 +1,7 @@
 #include "Dadaistic.h"
 
 Dadaistic::Dadaistic( SentencePattern &pattern,Dictionary &dictionary): Poem(pattern,dictionary){
-	this->lines_number = (rand() % 20) + 1; // min 1 verse, max 20 verse
+	this->lines_number = (rand() % 8) + 1; // min 1 verse, max 8 verse
 	this->rhymed = rand() % 2;
 	this->syll_per_verse = NULL;
 	this->dictionary = dictionary;

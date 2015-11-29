@@ -3,7 +3,6 @@
 #include <vector>
 #include "Dictionary.h"
 #include "SentencePattern.h"
-#include "Word.h"
 #include "Poem.h"
 #include "Custom.h"
 #include "Sonet.h"

@@ -13,10 +13,18 @@
 *.tmp
 *.tmp_proj
 *.meta
+add.png
+edit.png
+plusminus.png
+Pollito Peligroso.ttf
+Paper Banner-Regular.ttf
+edit_patterns.png
 
 #not needed folders
 SFML-2.3.2/
 Listy słów/
+
+generatorWierszy/Release
 generatorWierszy/Debug/generatorWierszy.tlog/
 
 # Windows image file caches
