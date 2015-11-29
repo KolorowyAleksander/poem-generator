@@ -22,7 +22,7 @@ int main(){
 	srand(time(nullptr));
 	SentencePattern pattern;
 	Dictionary dict;
-	Custom sonet(6,0,7,pattern,dict);
+    Sonet sonet(pattern,dict);
 	sonet.make_poem();
 	sonet.print_poem();
 	sonet.save_poem();
