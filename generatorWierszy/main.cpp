@@ -16,7 +16,7 @@
 int main(){
 
 	srand(time(nullptr)); //for random number generators
-	unsigned int height = 475; //height of the window
+	unsigned int height = 470; //height of the window
 	unsigned int width = 1000; // width of the window
 
 	/*initializing patterns and dictionary*/
@@ -57,7 +57,12 @@ int main(){
 		edit.setTexture(texture);
 		edit.setPosition(sf::Vector2f(15, 340));
 	}
-
+	sf::Texture texture2;
+	sf::Sprite save;
+	if (texture2.loadFromFile("save.png")){
+		save.setTexture(texture2);
+		save.setPosition(sf::Vector2f(935, 405));
+	}
 
 	//variables for the programm to work
 	string input_text;
@@ -177,6 +182,14 @@ int main(){
 							dict.read_from_file();
 						}
 					}
+					if (position.x >= 935 && position.x <= 985 && position.y >= 405 && position.y <= 455){
+						if (output_text != "welcome welcome"){
+							ofstream NewPoem;
+							NewPoem.open("poem.txt");
+							NewPoem << output_text << endl;
+							NewPoem.close();
+						}
+					}
 				}
 			}
 		}
@@ -191,6 +204,7 @@ int main(){
 			window.draw(textsss);
 		}
 		window.draw(edit);
+		window.draw(save);
 		window.draw(verses_output);
 		window.draw(syll_output);
 		window.draw(if_rhymed);
