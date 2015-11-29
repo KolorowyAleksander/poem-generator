@@ -24,6 +24,10 @@ void Poem::print_poem(){
 	cout << this->poem << endl;
 }
 
+string Poem::get_text(){
+	return poem;
+}
+
 char** Poem::choose_patterns(){
 	char ** patterns_table = new char*[lines_number];
 	for (int i = 0; i < lines_number; i++){

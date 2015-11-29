@@ -15,6 +15,7 @@ public:
 	virtual	~Poem();
 	void make_poem();
 	void print_poem();
+	string get_text();
 	void save_poem(); //save text of poem to file poem.txt
 protected:
 	int lines_number; // number of verse
