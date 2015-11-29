@@ -14,12 +14,12 @@ public:
 	SentencePattern();
 	~SentencePattern();
 	char * get_pattern();
+	bool read_patterns();
+	bool save_patterns();
 
 private:
 	list<string> patterns_list;
 	string filename = "patterns_file.txt";
-	bool read_patterns();
-	bool save_patterns();
 	bool add(string pattern);
 	bool change(string new_pattern,string old_pattern);
 	bool remove(string pattern);

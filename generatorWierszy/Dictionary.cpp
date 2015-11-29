@@ -5,16 +5,15 @@
 #include "word_type.h"
 
 Dictionary::Dictionary(){
-	this->words = new std::list<Word>; //make a list for words from file
 	read_from_file(); //read from file
 }
 
 Dictionary::~Dictionary(){
 	save_to_file(); //save to file
-	delete this->words; //free list from memory
 }
 
 void Dictionary::read_from_file(){
+	this->words = new std::list<Word>; //make a list for words from file
 	std::fstream file(this->filename);
 	file.open(this->filename, std::ios::in);
 	file.clear();
@@ -36,6 +35,7 @@ void Dictionary::save_to_file(){
 	for (auto i : *words)
 		file << i;
 	file.close();
+	delete this->words; //free list from memory
 }
 
 void Dictionary::add(std::string word, int type){

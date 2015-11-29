@@ -11,6 +11,7 @@ SentencePattern:: ~SentencePattern(){
 
 
 bool SentencePattern::read_patterns(){
+	patterns_list.clear();
 	string pattern;
 	fstream fd;
 	fd.open(filename, ios::in);
@@ -28,6 +29,7 @@ bool SentencePattern::save_patterns(){
 		fd << *iter << endl;
 	}
 	fd.close();
+	patterns_list.clear();
 	return 0;
 }
 bool SentencePattern::add(string pattern){
